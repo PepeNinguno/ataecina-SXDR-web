@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Ataecina Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <!-- Font Awesome para el icono de usuario -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Enlace a Three.js en el <head> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+
+</head>
+<body class="default-theme">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-xl navbar-light">
+        <div class="container-fluid">
+            <!-- Logo alineado a la izquierda -->
+            <a class="navbar-brand" href="/index.html">
+                <img src="assets/images/logo.png" alt="Ataecina Project Logo" height="60">
+            </a>
+        
+            <!-- Botón de menú para pantallas pequeñas -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <!-- Menú desplegable con items y elementos a la derecha -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- Dropdown para Products -->
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+                        <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                            <li><a class="dropdown-item" href="/pages/products/siem.html">SIEM</a></li>
+                            <li><a class="dropdown-item" href="/pages/products/edr.html">EDR</a></li>
+                            <li><a class="dropdown-item" href="/pages/products/waf.html">WAF</a></li>
+                            <li><a class="dropdown-item" href="/pages/products/ngfw.html">NGFW</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Dropdown para Solutions -->
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Solutions</a>
+                        <ul class="dropdown-menu" aria-labelledby="solutionsDropdown">
+                            <li><a class="dropdown-item" href="/pages/solutions/highschools.html">Institutos y Estudiantes</a></li>
+                            <li><a class="dropdown-item" href="/pages/solutions/small_enterprise.html">Pequeñas Empresas</a></li>
+                            <li><a class="dropdown-item" href="/pages/solutions/enterprise.html">Empresas</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Dropdown para Resources -->
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+                        <ul class="dropdown-menu" aria-labelledby="resourcesDropdown">
+                            <li><a class="dropdown-item" href="/pages/resources/documentation.html">Documentation</a></li>
+                            <li><a class="dropdown-item" href="/pages/resources/courses.html">Courses</a></li>
+                            <li><a class="dropdown-item" href="/pages/resources/ctfs.html">CTFs</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Link directo para Why Ataecina-Project -->
+                    <a class="nav-link" href="/pages/about/why_ataecina.html">Why Ataecina-Project?</a>
+                </div>
+
+                <!-- Barra de búsqueda con ícono integrado -->
+                <form class="d-flex me-3">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                    </div>
+                </form>
+            
+                <!-- Menú desplegable de Login/Signup con icono de usuario -->
+                <div class="dropdown me-3">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user"></i> 
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                        <li><a class="dropdown-item" href="#">Login</a></li>
+                        <li><a class="dropdown-item" href="#">Signup</a></li>
+                    </ul>
+                </div>
+            
+                <!-- Menú desplegable para selección de idioma -->
+                <div class="dropdown me-3">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span id="currentLanguageFlag">🇪🇸</span> <!-- Icono de bandera actual -->
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <li><a class="dropdown-item" href="#" data-lang="es"><span class="flag-icon">🇪🇸</span> Español</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="en"><span class="flag-icon">🇺🇸</span> English</a></li>
+                    </ul>
+                </div>                                          
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Sección de lema y mensaje -->
+    <section class="hero-section d-flex align-items-center">
+        <div class="container text-container">
+            <h3 data-lang-es="Somos el escudo en la oscuridad" data-lang-en="We are the shield in the darkness">Somos el escudo en la oscuridad</h3>
+            <br>
+            <br>
+            <h3 data-lang-es="La última línea de defensa en el mundo digital." data-lang-en="The last line of defense in the digital world.">La última línea de defensa en el mundo digital.</h3>
+        </div>
+        <div class="image-container">
+            <img src="assets/images/welcome.jpg" alt="Cybersecurity Illustration" class="hero-image">
+        </div>
+    </section>
+    <!-- Nueva Sección de Presentación -->
+    <section class="presentation-section text-center py-5">
+        <div class="container">
+            <h2 class="display-4 fw-bold" data-lang-es="ATAECINA PROJECT" data-lang-en="ATAECINA PROJECT">
+                ATAECINA PROJECT
+            </h2>
+            
+            <div class="my-3">
+                <img src="assets/images/logo.png" alt="Ataecina Project Logo" height="400">
+            </div>
+            
+            <p class="project-description" 
+               data-lang-es="Ataecina Project es una suite de herramientas de ciberseguridad diseñada para proporcionar la última línea de defensa en el mundo digital. El proyecto Ataecina se ha creado como una herramienta de código abierto para que en los centros de estudios puedan aprender el funcionamiento de herramientas básicas de ciberseguridad y sentar una base de conocimiento de cómo funcionan tecnologías como SIEM, EDR, WAF, Firewalls, entre otros. Con la suite de Ataecina, los estudiantes pueden testear en un entorno de laboratorio el funcionamiento de un SOC y aprender cómo crear una infraestructura segura a la hora de bastionar una empresa."
+               data-lang-en="Ataecina Project is a cybersecurity suite designed to provide the last line of defense in the digital world. Ataecina has been created as an open-source tool for educational institutions to learn the workings of basic cybersecurity tools and establish a foundational understanding of technologies like SIEM, EDR, WAF, Firewalls, among others. With the Ataecina suite, students can test the operation of a SOC in a lab environment and learn how to build a secure infrastructure when hardening an organization.">
+                Ataecina Project es una suite de herramientas de ciberseguridad diseñada para proporcionar la última línea de defensa en el mundo digital. El proyecto Ataecina se ha creado como una herramienta de código abierto para que en los centros de estudios puedan aprender el funcionamiento de herramientas básicas de ciberseguridad y sentar una base de conocimiento de cómo funcionan tecnologías como SIEM, EDR, WAF, Firewalls, entre otros. Con la suite de Ataecina, los estudiantes pueden testear en un entorno de laboratorio el funcionamiento de un SOC y aprender cómo crear una infraestructura segura a la hora de bastionar una empresa.
+            </p>
+
+        </div>
+    </section>
+    <!-- Mapa de ciberamenazas -->
+    <section class="inverse-hero-section">
+        <div class="map-container">
+            <!-- El iframe del mapa de Threatbutt-->
+            <iframe src="https://threatbutt.com/map/" width="100%" height="100%" frameborder="0"></iframe>
+        </div>
+        <div class="text-container">
+            <h3 class="display-4 fw-bold" 
+                data-lang-es="La Ciberseguridad se ha vuelto esencial en el nuevo mundo digitalizado en el que vivimos" 
+                data-lang-en="Cybersecurity has become essential in the new digitized world we live in">
+                La Ciberseguridad se ha vuelto esencial en el nuevo mundo digitalizado en el que vivimos
+            </h3>
+            <br>
+            <br>
+            <p class="lead" 
+               data-lang-es="Esta suite ofrece herramientas avanzadas para la ciberseguridad, facilitando el aprendizaje y el desarrollo de habilidades críticas para la protección digital."
+               data-lang-en="This suite offers advanced cybersecurity tools, facilitating learning and the development of critical skills for digital protection.">
+                Esta suite ofrece herramientas avanzadas para la ciberseguridad, facilitando el aprendizaje y el desarrollo de habilidades críticas para la protección digital.
+            </p>
+        </div>
+    </section>
+    <br>
+    <br>
+    <!-- Carrusel -->
+    <section id="carouselSection" class="carousel-section">
+        <div id="standardCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#standardCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#standardCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#standardCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#standardCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+    
+            <!-- Imágenes del carrusel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <!-- Enlace para SIEM -->
+                    <a href="/pages/products/siem.html">
+                        <img src="assets/images/siem.webp" class="d-block w-100" alt="SIEM">
+                    </a>
+                    <div class="carousel-caption">
+                        <h5 data-lang-es="SIEM (Gestión de Información y Eventos de Seguridad)" data-lang-en="SIEM (Security Information and Event Management)">SIEM</h5>
+                        <p data-lang-es="Monitoreo centralizado y análisis de eventos de seguridad." data-lang-en="Centralized monitoring and security event analysis.">Monitoreo centralizado y análisis de eventos de seguridad.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <!-- Enlace para EDR -->
+                    <a href="/pages/products/edr.html">
+                        <img src="assets/images/edr.webp" class="d-block w-100" alt="EDR">
+                    </a>
+                    <div class="carousel-caption">
+                        <h5 data-lang-es="EDR (Detección y Respuesta de Endpoints)" data-lang-en="EDR (Endpoint Detection and Response)">EDR</h5>
+                        <p data-lang-es="Protección avanzada contra amenazas en dispositivos finales." data-lang-en="Advanced threat protection for endpoint devices.">Protección avanzada contra amenazas en dispositivos finales.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <!-- Enlace para WAF -->
+                    <a href="/pages/products/waf.html">
+                        <img src="assets/images/waf.webp" class="d-block w-100" alt="WAF">
+                    </a>
+                    <div class="carousel-caption">
+                        <h5 data-lang-es="WAF (Cortafuegos de Aplicaciones Web)" data-lang-en="WAF (Web Application Firewall)">WAF</h5>
+                        <p data-lang-es="Defensa para aplicaciones web frente a ataques comunes." data-lang-en="Defense for web applications against common attacks.">Defensa para aplicaciones web frente a ataques comunes.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <!-- Enlace para NGFW -->
+                    <a href="/pages/products/ngfw.html">
+                        <img src="assets/images/ngfw.webp" class="d-block w-100" alt="NGFW">
+                    </a>
+                    <div class="carousel-caption">
+                        <h5 data-lang-es="NGFW (Cortafuegos de Nueva Generación)" data-lang-en="NGFW (Next Generation Firewall)">NGFW</h5>
+                        <p data-lang-es="Firewall avanzado con inspección profunda de paquetes y más." data-lang-en="Advanced firewall with deep packet inspection and more.">Firewall avanzado con inspección profunda de paquetes y más.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Controles de navegación -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#standardCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#standardCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </section>
+    
+    
+    
+    <!-- Contenedor principal de herramientas -->
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Ataecina Project</h1>
+        <div id="toolsList" class="row"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

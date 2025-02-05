@@ -1,0 +1,154 @@
+/* Estilos específicos para la página Why Ataecina */
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.why-ataecina {
+    padding: 80px 0; /* Añadir margen superior para evitar superposición del navbar */
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+h1, h2 {
+    color: #0A0F1D;
+}
+
+.tools {
+    margin-top: 30px;
+}
+
+.tools .tool {
+    width: 45%;
+}
+
+p, ul {
+    font-size: 1.1rem;
+    color: #343a40;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+button {
+    font-size: 1.2rem;
+}
+
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+    .why-ataecina {
+        padding-top: 3rem;
+    }
+
+    .why-ataecina h1 {
+        font-size: 2rem;
+    }
+
+    .why-ataecina h2 {
+        font-size: 1.5rem;
+    }
+
+    .why-ataecina .tools {
+        flex-direction: column;
+    }
+
+    .why-ataecina ul {
+        padding: 0 1rem;
+    }
+}
+/* Carrusel de texto de beneficios */
+.text-carousel .carousel-item {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+/* Estilos para las tarjetas de herramientas */
+.tools-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.tool-card {
+    background: linear-gradient(135deg, #0062ff, #00d4ff);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+}
+
+.tool-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.tool-card p {
+    font-size: 0.875rem;
+}
+
+/* Estilos de la sección de licencias */
+.licenses-section {
+    background-color: #eef4fa;
+    padding: 2rem 0;
+}
+
+.license-text {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto 1rem;
+}
+
+button.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 0.5rem 2rem;
+}
+
+/* Estilo para el carrusel */
+/* Estilo para el elemento del carrusel */
+.carousel-item {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Ajusta la altura del carrusel según tus necesidades */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Asegura que el fondo no se superponga en el caption */
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: none; /* Evita color de fondo en esta clase */
+}
+
+/* Estilos para el texto del caption */
+.caption-text {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente solo para el texto */
+    color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 80%; /* Asegura que el texto no ocupe todo el ancho */
+}
+html {
+    scroll-behavior: smooth;
+}

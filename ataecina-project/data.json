@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Herramienta 1",
+        "description": "Descripción de la herramienta 1",
+        "imageUrl": "https://example.com/image1.jpg"
+    },
+    {
+        "name": "Herramienta 2",
+        "description": "Descripción de la herramienta 2",
+        "imageUrl": "https://example.com/image2.jpg"
+    }
+]

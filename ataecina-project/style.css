@@ -1,0 +1,343 @@
+/* Colores corporativos */
+:root {
+    --azul-oscuro-navbar: #0A0F1D;
+    --azul-electrico: #007bff;
+    --blanco: #ffffff;
+}
+
+/* Estilos globales */
+h1 {
+    color: #343a40;
+}
+
+.card {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+/* Tema corporativo por defecto */
+.default-theme {
+    background-color: var(--blanco);
+    color: var(--azul-oscuro-navbar);
+}
+
+.default-theme .navbar {
+    background-color: var(--azul-oscuro-navbar);
+}
+
+.default-theme .navbar a {
+    color: var(--blanco);
+}
+
+.default-theme .navbar-nav .nav-link {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.default-theme .navbar a:hover {
+    color: var(--blanco);
+    text-decoration: underline;
+}
+
+.default-theme .btn-outline-primary {
+    color: var(--blanco);
+    border-color: var(--blanco);
+}
+
+.default-theme .btn-outline-primary:hover {
+    background-color: var(--blanco);
+    color: var(--azul-oscuro-navbar);
+}
+
+.default-theme .form-control {
+    background-color: var(--blanco);
+    color: var(--azul-oscuro-navbar);
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Estilos del menú desplegable general */
+.default-theme .dropdown-menu {
+    background-color: var(--azul-oscuro-navbar);
+    border: none;
+    border-radius: 0.25rem;
+    min-width: auto;
+    padding: 0.5rem;
+    right: 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Fijar el navbar en la parte superior */
+.navbar {
+    position: fixed; /* Fija el navbar en la posición actual */
+    top: 0;          /* Alinea el navbar con el borde superior de la ventana */
+    width: 100%;     /* Asegura que ocupe todo el ancho de la página */
+    z-index: 1000;   /* Mantiene el navbar por encima de otros elementos */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra opcional para destacarlo */
+}
+/* Ajuste del espacio en el contenido para evitar que quede cubierto */
+.main-content {
+    padding-top: 60px; /* Ajusta este valor según la altura real de tu navbar */
+}
+
+.default-theme .dropdown-menu .dropdown-item {
+    color: var(--blanco);
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+}
+
+.default-theme .dropdown-menu .dropdown-item:hover {
+    background-color: var(--blanco);
+    color: var(--azul-oscuro-navbar);
+}
+
+/* ************************************************************* */
+.default-theme .navbar {
+    background-color: var(--azul-oscuro-navbar) !important; /* Fuerza el fondo oscuro */
+    color: var(--blanco);
+}
+
+.default-theme .navbar a {
+    color: var(--blanco) !important;
+}
+
+.default-theme .navbar a:hover {
+    color: var(--blanco);
+    text-decoration: underline;
+}
+
+/* Mantén el navbar fijo sin interferencias */
+.navbar.fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+/* ************************************************************* */
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: absolute;
+        width: auto;
+        left: 0;
+        transform: translateY(5px);
+        z-index: 1050;
+    }
+}
+/* Tipografía global */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilos para la sección 'Coming Soon' */
+.coming-soon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    background-color: #f8f9fa; /* Fondo suave */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.coming-soon-image {
+    max-width: 55%;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.coming-soon-container h2 {
+    font-size: 2rem;
+    color: #0A0F1D; /* Azul oscuro corporativo */
+    margin-bottom: 10px;
+}
+
+.coming-soon-container p {
+    font-size: 1.2rem;
+    color: #343a40;
+    max-width: 600px;
+}
+
+/* Estilo para el texto principal (arriba) */
+.hero-section .text-container h3:first-child {
+    font-size: 3.5rem;   /* Tamaño más grande para el texto superior */
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+}
+
+/* Estilo para el texto secundario (abajo) */
+.hero-section .text-container h3:last-child {
+    font-size: 2.5rem;   /* Tamaño más pequeño para el texto inferior */
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin: 0;
+}
+
+/* Ajuste en dispositivos móviles */
+@media (max-width: 768px) {
+    .hero-section .text-container h3:first-child {
+        font-size: 2.5rem;  /* Reducción de tamaño en pantalla pequeña */
+    }
+    .hero-section .text-container h3:last-child {
+        font-size: 2rem;    /* Reducción de tamaño en pantalla pequeña */
+    }
+}
+
+
+/* Sección Hero principal */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, var(--azul-oscuro-navbar), var(--azul-electrico));
+    color: var(--blanco);
+    width: 100vw;
+    height: 70vh; /* Ajusta la altura según tus necesidades */
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.text-container {
+    flex: 1;
+    padding-left: 20px;
+    max-width: 50%; /* Limita el ancho del contenedor de texto a la mitad izquierda */
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: none; /* Elimina la restricción del ancho */
+    margin-right: 0; /* Asegura que esté alineada al borde derecho */
+}
+
+/* Sección Hero Invertido */
+.inverse-hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to left, var(--azul-oscuro-navbar), var(--azul-electrico));
+    color: var(--blanco);
+    width: 100vw;
+    height: 70vh;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.inverse-hero-section .text-container {
+    flex: 1;
+    padding-right: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--blanco);
+    text-align: center;
+}
+
+.inverse-hero-section .map-container {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+}
+
+.inverse-hero-section .map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Sección del párrafo de descripción del proyecto */
+.project-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--azul-oscuro-navbar);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+    text-align: justify;
+}
+
+/* Estilo para resaltar palabras clave */
+.project-description .highlight {
+    color: var(--azul-electrico);
+    font-weight: bold;
+}
+
+/* Eliminar el scroll horizontal */
+body {
+    overflow-x: hidden;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .hero-section, .inverse-hero-section {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 20px;
+        background-size: cover;
+    }
+
+    .hero-section .hero-image,
+    .inverse-hero-section .map-container {
+        width: 100%;
+        height: 50vh;
+        margin: 0;
+    }
+
+    .text-container {
+        text-align: center;
+        padding: 0 15px;
+    }
+}
+/* Sección del carrusel */
+.carousel-section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+/* Imagen en el carrusel */
+.carousel-inner img {
+    width: 100%;
+    height: 500px; /* Ajusta la altura según tus necesidades */
+    object-fit: cover;
+}
+
+/* Texto con fondo translúcido */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semi-transparente */
+    padding: 10px;
+    border-radius: 8px; /* Bordes redondeados */
+    color: #ffffff;
+}
+
+/* Indicadores del carrusel */
+.carousel-indicators [data-bs-target] {
+    background-color: black;
+}
